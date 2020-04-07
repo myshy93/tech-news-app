@@ -1,6 +1,6 @@
-package com.example.technews.data
+package com.example.technews.data.api
 
-import com.example.technews.data.models.TopHeadlines
+import com.example.technews.data.api.models.TopHeadlines
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Query

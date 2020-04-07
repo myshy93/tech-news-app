@@ -1,11 +1,14 @@
-package com.example.technews.data
+package com.example.technews.data.api
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.technews.R
-import com.example.technews.data.models.Article
+import com.example.technews.data.api.models.Article
 import com.example.technews.databinding.FragmentArticleBinding
 
 
@@ -42,14 +45,16 @@ class ArticlesAdapter : RecyclerView.Adapter<ArticlesAdapter.DataBoundViewHolder
 
     override fun onBindViewHolder(holder: DataBoundViewHolder, position: Int) {
 //        val item = Uri.parse(("http://github.com"))
+        val view: View = holder.binding.root
         holder.binding.article = articles[position]
         holder.binding.executePendingBindings()
 //        val view = holder.getView()
-//        view.setOnClickListener {
-//            val context = it.context
-//            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(articles[position].url))
-//            context.startActivity(intent)
-//        }
+        view.setOnClickListener {
+            val context = it.context
+//            TODO: open a web view
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(articles[position].url))
+            context.startActivity(intent)
+        }
 
     }
 

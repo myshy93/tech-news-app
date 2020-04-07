@@ -5,7 +5,7 @@
 
         <variable
             name="article"
-            type="com.example.technews.data.models.Article" />
+            type="com.example.technews.data.api.models.Article" />
     </data>
 
     <LinearLayout

@@ -1,4 +1,4 @@
-package com.example.technews.data
+package com.example.technews.data.api
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -8,7 +8,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 object NewsApiService {
     private const val API_KEY: String = "767a6488465040c2bc839d5c0db45128"
     private val interceptor = Interceptor { chain ->
-        val url = chain.request().url().newBuilder().addQueryParameter("apiKey", API_KEY).build()
+        val url = chain.request().url().newBuilder().addQueryParameter(
+            "apiKey",
+            API_KEY
+        ).build()
         val request = chain.request()
             .newBuilder()
             .url(url)
@@ -25,5 +28,6 @@ object NewsApiService {
             .build()
     }
 
-    val newsApi: NewsApiInterface = getRetrofit().create(NewsApiInterface::class.java)
+    val newsApi: NewsApiInterface = getRetrofit()
+        .create(NewsApiInterface::class.java)
 }

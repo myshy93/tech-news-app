@@ -3,9 +3,9 @@ package com.example.technews
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.technews.data.ArticlesAdapter
-import com.example.technews.data.models.Article
-import com.example.technews.data.models.Source
+import com.example.technews.data.api.ArticlesAdapter
+import com.example.technews.data.api.models.Article
+import com.example.technews.data.api.models.Source
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
