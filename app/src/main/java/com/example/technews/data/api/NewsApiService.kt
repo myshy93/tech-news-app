@@ -5,8 +5,8 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object NewsApiService {
-    private const val API_KEY: String = "767a6488465040c2bc839d5c0db45128"
+class NewsApiService {
+    private val API_KEY: String = "aa3134572ba14165bb3d484afd7aa86d"
     private val interceptor = Interceptor { chain ->
         val url = chain.request().url().newBuilder().addQueryParameter(
             "apiKey",
