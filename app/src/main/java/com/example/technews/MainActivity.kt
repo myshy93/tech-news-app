@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
 
     fun setView(articles: List<ArticleEntity>) {
         linearLayoutManager = LinearLayoutManager(this)
-        recyclerView.layoutManager = linearLayoutManager
         adapter = ArticlesAdapter()
         articles.map { it ->
             ArticleViewModel(it)

@@ -30,10 +30,8 @@ class NewsRepository(
         // map to business logic models
         latestArticles?.map { it.toArticleEntity() }
             ?.also {
-                // clear old articles
-                articleDao.clearArticles()
-                // save fresh article
-                articleDao.saveArticles(it)
+                // clear old articles and save the new ones
+                articleDao.clearAndSave(it)
             }
     }
 }

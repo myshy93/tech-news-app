@@ -4,7 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.technews.databinding.FragmentArticleBinding
+import com.example.technews.databinding.ItemArticleBinding
 
 
 class ArticlesAdapter : RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>() {
@@ -21,7 +21,7 @@ class ArticlesAdapter : RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = FragmentArticleBinding.inflate(layoutInflater)
+        val binding = ItemArticleBinding.inflate(layoutInflater)
         return ArticleViewHolder(binding)
     }
 
@@ -34,7 +34,7 @@ class ArticlesAdapter : RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>(
         holder.bind(articles[position])
     }
 
-    class ArticleViewHolder(val binding: FragmentArticleBinding) :
+    class ArticleViewHolder(val binding: ItemArticleBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(article: ArticleViewModel) {
             binding.articleViewModel = article

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Transaction
 
 @Dao
 interface ArticleDao {
@@ -16,4 +17,10 @@ interface ArticleDao {
 
     @Query("DELETE FROM articles")
     suspend fun clearArticles()
+
+    @Transaction
+    suspend fun clearAndSave(list: List<ArticleEntity>) {
+        clearArticles()
+        saveArticles(list)
+    }
 }
