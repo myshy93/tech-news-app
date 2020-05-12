@@ -16,7 +16,7 @@ class WebActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web)
 
-        val url = intent.getStringExtra("ARTICLE_URL")
+        val url = intent.getStringExtra(ArticlesAdapter.articleIdKey)
         webView.settings.javaScriptEnabled = true
         webView.webViewClient = MyAppWebViewClient()
         Log.d("WEBVIEW", url)
