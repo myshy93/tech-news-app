@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.technews.databinding.ItemArticleBinding
 
 
+const val articleIdKey: String = "ARTICLE_ID"
+
 class ArticlesAdapter : RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>() {
 
     private var articles: List<ArticleViewModel> = listOf()
@@ -40,7 +42,7 @@ class ArticlesAdapter : RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>(
             binding.articleViewModel = article
             binding.root.setOnClickListener {
                 val intent = Intent(it.context, WebActivity::class.java)
-                intent.putExtra("ARTICLE_URL", article.url)
+                intent.putExtra(articleIdKey, article.url)
                 it.context.startActivity(intent)
             }
         }
